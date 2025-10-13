@@ -16,6 +16,6 @@ class FakerRu
         $randNumber = mt_rand(0, 3);
         $result = $texts[$randNumber];
 
-        return !empty($length) ? str_split($result, $length)[0] : $result;
+        return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 }
