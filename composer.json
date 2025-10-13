@@ -4,7 +4,7 @@
   "keywords": ["php", "faker", "package", "seed", "db"],
   "license": "MIT",
   "require": {
-    "php": ">=8.2"
+    "php": "^8.2"
   },
   "require-dev": {
     "pestphp/pest": "^3.8",
