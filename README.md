@@ -1,0 +1,1 @@
+Russian faker for seed, for example on Laravel 12
