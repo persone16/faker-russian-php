@@ -4,6 +4,115 @@ namespace persone16\FakerRussianPhp;
 
 class FakerRu
 {
+    public function firstname($gender = 'female'): string
+    {
+        $male = [
+            'Александр',
+            'Алексей',
+            'Андрей',
+            'Артём',
+            'Дмитрий',
+            'Иван',
+            'Максим',
+            'Михаил',
+            'Николай',
+            'Сергей',
+        ];
+
+        $female = [
+            'Анна',
+            'Екатерина',
+            'Елена',
+            'Ирина',
+            'Мария',
+            'Наталья',
+            'Ольга',
+            'Светлана',
+            'Татьяна',
+            'Юлия'
+        ];
+
+        $texts = $gender === 'male' ? $male : $female;
+
+        $randNumber = mt_rand(0, 9);
+        $result = $texts[$randNumber];
+
+        return !empty($length) ? mb_str_split($result, $length)[0] : $result;
+    }
+
+    public function lastname($gender = 'female'): string
+    {
+        $male = [
+            'Иванов',
+            'Петров',
+            'Смирнов',
+            'Кузнецов',
+            'Попов',
+            'Васильев',
+            'Михайлов',
+            'Новиков',
+            'Соколов',
+            'Фёдоров'
+        ];
+
+        $female = [
+            'Иванова',
+            'Петрова',
+            'Смирнова',
+            'Кузнецова',
+            'Попова',
+            'Васильева',
+            'Михайлова',
+            'Новикова',
+            'Соколова',
+            'Фёдорова'
+        ];
+
+        $texts = $gender === 'male' ? $male : $female;
+
+        $randNumber = mt_rand(0, 9);
+        $result = $texts[$randNumber];
+
+        return !empty($length) ? mb_str_split($result, $length)[0] : $result;
+    }
+
+    public function patronym($gender = 'female'): string
+    {
+        $male = [
+            'Иванович',
+            'Петрович',
+            'Сергеевич',
+            'Владимирович',
+            'Александрович',
+            'Николаевич',
+            'Михайлович',
+            'Дмитриевич',
+            'Георгиевич',
+            'Борисович'
+        ];
+
+        $female = [
+            'Ивановна',
+            'Петровна',
+            'Сергеевна',
+            'Владимировна',
+            'Александровна',
+            'Николаевна',
+            'Михайловна',
+            'Дмитриевна',
+            'Георгиевна',
+            'Борисовна'
+        ];
+
+        $texts = $gender === 'male' ? $male : $female;
+
+        $randNumber = mt_rand(0, 9);
+        $result = $texts[$randNumber];
+
+        return !empty($length) ? mb_str_split($result, $length)[0] : $result;
+    }
+
+
     public function text(int $length = null): string
     {
         $texts = [
