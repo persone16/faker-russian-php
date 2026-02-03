@@ -258,7 +258,7 @@ class FakerRu
         ];
 
         $randNumber = mt_rand(0, 19);
-        $result = $$city[$randNumber];
+        $result = $city[$randNumber];
 
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
