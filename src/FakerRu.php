@@ -7,34 +7,74 @@ class FakerRu
     public function firstname($gender = 'female'): string
     {
         $male = [
+            'Михаил',
             'Александр',
-            'Алексей',
-            'Андрей',
             'Артём',
-            'Дмитрий',
+            'Матвей',
+            'Тимофей',
             'Иван',
             'Максим',
-            'Михаил',
+            'Дмитрий',
+            'Марк',
+            'Лев',
+            'Даниил',
+            'Егор',
+            'Кирилл',
+            'Андрей',
             'Николай',
             'Сергей',
+            'Илья',
+            'Роман',
+            'Владимир',
+            'Алексей',
+            'Арсений',
+            'Фёдор',
+            'Георгий',
+            'Константин',
+            'Павел',
+            'Глеб',
+            'Денис',
+            'Степан',
+            'Владислав',
+            'Захар'
         ];
 
         $female = [
+            'София',
+            'Ева',
             'Анна',
-            'Екатерина',
-            'Елена',
-            'Ирина',
             'Мария',
-            'Наталья',
+            'Варвара',
+            'Виктория',
+            'Василиса',
+            'Алиса',
+            'Екатерина',
+            'Полина',
+            'Дарья',
+            'Елизавета',
+            'Александра',
+            'Арина',
+            'Вероника',
+            'Елена',
+            'Ксения',
+            'Милана',
             'Ольга',
-            'Светлана',
             'Татьяна',
-            'Юлия'
+            'Ульяна',
+            'Диана',
+            'Кира',
+            'Валерия',
+            'Ирина',
+            'Светлана',
+            'Юлия',
+            'Наталья',
+            'Маргарита',
+            'Анастасия'
         ];
 
         $texts = $gender === 'male' ? $male : $female;
 
-        $randNumber = mt_rand(0, 9);
+        $randNumber = mt_rand(0, 29);
         $result = $texts[$randNumber];
 
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
@@ -52,7 +92,27 @@ class FakerRu
             'Михайлов',
             'Новиков',
             'Соколов',
-            'Фёдоров'
+            'Фёдоров',
+            'Морозов',
+            'Волков',
+            'Алексеев',
+            'Лебедев',
+            'Семенов',
+            'Егоров',
+            'Павлов',
+            'Козлов',
+            'Степанов',
+            'Николаев',
+            'Орлов',
+            'Андреев',
+            'Макаров',
+            'Никитин',
+            'Захаров',
+            'Зайцев',
+            'Соловьёв',
+            'Борисов',
+            'Яковлев',
+            'Григорьев'
         ];
 
         $female = [
@@ -65,12 +125,32 @@ class FakerRu
             'Михайлова',
             'Новикова',
             'Соколова',
-            'Фёдорова'
+            'Фёдорова',
+            'Морозова',
+            'Волкова',
+            'Алексеева',
+            'Лебедева',
+            'Семенова',
+            'Егорова',
+            'Павлова',
+            'Козлова',
+            'Степанова',
+            'Николаева',
+            'Орлова',
+            'Андреева',
+            'Макарова',
+            'Никитина',
+            'Захарова',
+            'Зайцева',
+            'Соловьёва',
+            'Борисова',
+            'Яковлева',
+            'Григорьева'
         ];
 
         $texts = $gender === 'male' ? $male : $female;
 
-        $randNumber = mt_rand(0, 9);
+        $randNumber = mt_rand(0, 29);
         $result = $texts[$randNumber];
 
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
@@ -88,7 +168,27 @@ class FakerRu
             'Михайлович',
             'Дмитриевич',
             'Георгиевич',
-            'Борисович'
+            'Борисович',
+            'Алексеевич',
+            'Андреевич',
+            'Евгеньевич',
+            'Олегович',
+            'Павлович',
+            'Степанович',
+            'Юрьевич',
+            'Васильевич',
+            'Викторович',
+            'Игоревич',
+            'Константинович',
+            'Леонидович',
+            'Максимович',
+            'Романович',
+            'Станиславович',
+            'Федорович',
+            'Эдуардович',
+            'Яковлевич',
+            'Тимофеевич',
+            'Геннадьевич'
         ];
 
         $female = [
@@ -101,19 +201,70 @@ class FakerRu
             'Михайловна',
             'Дмитриевна',
             'Георгиевна',
-            'Борисовна'
+            'Борисовна',
+            'Алексеевна',
+            'Андреевна',
+            'Евгеньевна',
+            'Олеговна',
+            'Павловна',
+            'Степановна',
+            'Юрьевна',
+            'Васильевна',
+            'Викторовна',
+            'Игоревна',
+            'Константиновна',
+            'Леонидовна',
+            'Максимовна',
+            'Романовна',
+            'Станиславовна',
+            'Федоровна',
+            'Эдуардовна',
+            'Яковлевна',
+            'Тимофеевна',
+            'Геннадьевна'
         ];
 
         $texts = $gender === 'male' ? $male : $female;
 
-        $randNumber = mt_rand(0, 9);
+        $randNumber = mt_rand(0, 29);
         $result = $texts[$randNumber];
 
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
+    public function city(): string
+    {
+        $city = [
+            'Москва',
+            'Санкт-Петербург',
+            'Новосибирск',
+            'Екатеринбург',
+            'Казань',
+            'Нижний Новгород',
+            'Челябинск',
+            'Самара',
+            'Омск',
+            'Ростов-на-Дону',
+            'Уфа',
+            'Красноярск',
+            'Пермь',
+            'Воронеж',
+            'Волгоград',
+            'Краснодар',
+            'Саратов',
+            'Тюмень',
+            'Тольятти',
+            'Ижевск'
+        ];
 
-    public function text(int $length = null): string
+        $randNumber = mt_rand(0, 19);
+        $result = $$city[$randNumber];
+
+        return !empty($length) ? mb_str_split($result, $length)[0] : $result;
+    }
+
+
+    public function text(?int $length = null): string
     {
         $texts = [
             'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.',
@@ -128,7 +279,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function titleQuestion(int $length = null): string
+    public function titleQuestion(?int $length = null): string
     {
         $texts = [
             "Почему мужчины отдаляются, когда всё вроде хорошо?",
@@ -149,7 +300,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function descriptionQuestion(int $length = null): string
+    public function descriptionQuestion(?int $length = null): string
     {
         $texts = [
             "Мы с парнем встречались три месяца, всё было замечательно — внимание, забота, общие планы. А потом он резко стал холоднее, меньше писать, словно потерял интерес. Не понимаю, что я сделала не так.",
@@ -170,7 +321,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function answerQuestion(int $length = null): string
+    public function answerQuestion(?int $length = null): string
     {
         $texts = [
             "Это не обязательно связано с вами. Часто мужчины, когда отношения переходят на более серьёзный уровень, испытывают страх потерять свободу. Дайте немного пространства, не давите вопросами — если чувства есть, он вернётся к вовлечённости сам.",
@@ -191,7 +342,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function commentQuestion(int $length = null): string
+    public function commentQuestion(?int $length = null): string
     {
         $texts = [
             "У меня так же было! Через пару недель всё наладилось, когда перестала первой писать.",
@@ -212,7 +363,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function expertShortDescription(int $length = null): string
+    public function expertShortDescription(?int $length = null): string
     {
         $texts = [
             "Семейный психолог-практик",
@@ -228,7 +379,7 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    public function expertDescription(int $length = null): string
+    public function expertDescription(?int $length = null): string
     {
         $texts = [
             "
