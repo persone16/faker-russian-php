@@ -2282,26 +2282,26 @@ class FakerRu
         ];
     }
 
-    public function titleSmartQuestion(string $direction, string $targetAudience): string
+    public function smartTitleQuestion(string $direction, string $targetAudience): string
     {
         $texts = self::smartQuestions();
 
         return $texts[$direction][$targetAudience]['title'];
     }
 
-    public function descriptionSmartQuestion(string $direction, string $targetAudience): string
+    public function smartDescriptionQuestion(string $direction, string $targetAudience): string
     {
         $texts = self::smartQuestions();
 
         return $texts[$direction][$targetAudience]['description'];
     }
 
-    public function answerSmartQuestion()
+    public function smartAnswerQuestion()
     {
 
     }
 
-    public function commentSmartQuestion()
+    public function smartCommentQuestion()
     {
 
     }
