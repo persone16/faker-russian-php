@@ -3423,7 +3423,7 @@ class FakerRu
         return $texts[$direction][$targetAudience]['answers'][$index]['text'];
     }
 
-    public function smartAnswerThreadQuestion(string $direction, string $targetAudience, int $index): string
+    public function smartAnswerThreadQuestion(string $direction, string $targetAudience, int $index): array
     {
         $texts = self::smartQuestions();
 
