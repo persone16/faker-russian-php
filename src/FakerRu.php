@@ -296,7 +296,7 @@ class FakerRu
     public function expertShortDescription(string $mainFilter, string $subFilter, string $project = 'relations'): string
     {
         if ($project === 'veterinary') {
-            return (new FakeRelations())
+            return (new FakeVeterinars())
                 ->expertShortDescription($mainFilter, $subFilter);
         } else {
             return (new FakeRelations())
