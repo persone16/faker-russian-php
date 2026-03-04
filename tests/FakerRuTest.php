@@ -22,4 +22,24 @@ class FakerRuTest extends TestCase
         );
         $this->assertNotEmpty($result);
     }
+
+    public function testExpertDescriptionOnRelations()
+    {
+        $testObject = new FakerRu();
+        $result = $testObject->expertDescription(
+            'znakomstva', 'female', 'relations'
+        );
+        $this->assertNotEmpty($result);
+    }
+
+    public function testExpertDescriptionOnVeterinary()
+    {
+        $testObject = new FakerRu();
+        $result = $testObject->expertDescription(
+            'nevrologiya', 'koshki', 'veterinary'
+        );
+        var_dump($result);
+        exit;
+        $this->assertNotEmpty($result);
+    }
 }
