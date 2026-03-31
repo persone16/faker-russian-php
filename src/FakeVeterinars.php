@@ -4,7 +4,7 @@ namespace persone16\FakerRussianPhp;
 
 class FakeVeterinars
 {
-    public function expertShortDescription(string $direction, string $patient): string
+    public function expertShortDescription(string $direction, string $patient): ?string
     {
         $shortDescriptionTemplates = [
             'terapiya-diagnostika' => [
@@ -250,6 +250,10 @@ class FakeVeterinars
             'ekzoty' => 'экзотических животных',
         ];
 
+        if (empty($shortDescriptionTemplates[$direction])) {
+            return null;
+        }
+
         $randNumber = mt_rand(0, 9);
         $template = $shortDescriptionTemplates[$direction][$randNumber];
         $patientLabel = $patientForms[$patient];
@@ -257,7 +261,7 @@ class FakeVeterinars
         return sprintf($template, $patientLabel);
     }
 
-    public function expertDescription(string $direction, string $patient): string
+    public function expertDescription(string $direction, string $patient): ?string
     {
         $texts = [
             'terapiya-diagnostika' => [
@@ -3415,6 +3419,10 @@ class FakeVeterinars
                 ],
             ]
         ];
+
+        if (empty($texts[$direction] || $texts[$direction][$patient])) {
+            return null;
+        }
 
         $randNumber = mt_rand(0, 1);
 

@@ -294,26 +294,34 @@ class FakerRu
     }
 
     
-    public function expertShortDescription(string $mainFilter, string $subFilter, string $project = 'relations'): string
+    public function expertShortDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
     {
+        $result = null;
+
         if ($project === 'veterinary') {
-            return (new FakeVeterinars())
+            $result = (new FakeVeterinars())
                 ->expertShortDescription($mainFilter, $subFilter);
         } else {
-            return (new FakeRelations())
+            $result = (new FakeRelations())
                 ->expertShortDescription($mainFilter, $subFilter);
         }
+
+        return $result;
     }
 
-    public function expertDescription(string $mainFilter, string $subFilter, string $project = 'relations'): string
+    public function expertDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
     {
+        $result = null;
+
         if ($project === 'veterinary') {
-            return (new FakeVeterinars())
+            $result = (new FakeVeterinars())
                 ->expertDescription($mainFilter, $subFilter);
         } else {
-            return (new FakeRelations())
+            $result = (new FakeRelations())
                 ->expertDescription($mainFilter, $subFilter);
         }
+
+        return $result;
     }
 
 
