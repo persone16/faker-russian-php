@@ -3420,7 +3420,7 @@ class FakeVeterinars
             ]
         ];
 
-        if (empty($texts[$direction] || $texts[$direction][$patient])) {
+        if (empty($texts[$direction])) {
             return null;
         }
 
