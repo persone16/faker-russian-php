@@ -315,7 +315,7 @@ class FakerRu
 
         if ($project === 'veterinary') {
             $result = (new FakeVeterinars())
-                ->expertShortDescriptionByGender($mainFilter, $subFilter);
+                ->expertDescriptionByGender($mainFilter, $subFilter);
         } else {
             $result = (new FakeRelations())
                 ->expertDescription($mainFilter, $subFilter);
