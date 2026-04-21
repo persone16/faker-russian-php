@@ -786,7 +786,7 @@ class FakeVeterinars
             ],
         ];
 
-        $randNumber = mt_rand(0, 19);
+        $randNumber = mt_rand(0, 9);
 
         return $texts[$direction][$gender][$randNumber];
     }
@@ -3954,7 +3954,7 @@ class FakeVeterinars
             return null;
         }
 
-        $randNumber = mt_rand(0, 1);
+        $randNumber = mt_rand(0, 9);
 
         return $texts[$direction][$patient][$randNumber];
     }
@@ -4564,7 +4564,7 @@ class FakeVeterinars
             ]
         ];
     
-        $randNumber = mt_rand(0, 19);
+        $randNumber = mt_rand(0, 1);
 
         return $texts[$direction][$gender][$randNumber];
     }
