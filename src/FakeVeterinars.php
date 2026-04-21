@@ -7060,38 +7060,58 @@ class FakeVeterinars
         ];
     }
 
-    public function smartTitleQuestion(string $direction, string $targetAudience): ?string
+    public function smartTitleQuestion(string $direction, string $patient): ?string
     {
         $texts = self::smartQuestions();
 
-        return $texts[$direction][$targetAudience]['title'];
+        if (empty($texts[$direction][$patient])) {
+            return null;
+        }
+
+        return $texts[$direction][$patient]['title'];
     }
 
-    public function smartDescriptionQuestion(string $direction, string $targetAudience): ?string
+    public function smartDescriptionQuestion(string $direction, string $patient): ?string
     {
         $texts = self::smartQuestions();
 
-        return $texts[$direction][$targetAudience]['description'];
+        if (empty($texts[$direction][$patient])) {
+            return null;
+        }
+
+        return $texts[$direction][$patient]['description'];
     }
 
-    public function smartAnswerQuestion(string $direction, string $targetAudience, int $index): ?string
+    public function smartAnswerQuestion(string $direction, string $patient, int $index): ?string
     {
         $texts = self::smartQuestions();
 
-        return $texts[$direction][$targetAudience]['answers'][$index]['text'];
+        if (empty($texts[$direction][$patient])) {
+            return null;
+        }
+
+        return $texts[$direction][$patient]['answers'][$index]['text'];
     }
 
-    public function smartAnswerThreadQuestion(string $direction, string $targetAudience, int $index): ?array
+    public function smartAnswerThreadQuestion(string $direction, string $patient, int $index): ?array
     {
         $texts = self::smartQuestions();
 
-        return $texts[$direction][$targetAudience]['answers'][$index]['thread'];
+        if (empty($texts[$direction][$patient])) {
+            return null;
+        }
+
+        return $texts[$direction][$patient]['answers'][$index]['thread'];
     }
 
-    public function smartCommentQuestion(string $direction, string $targetAudience, int $index): ?string
+    public function smartCommentQuestion(string $direction, string $patient, int $index): ?string
     {
         $texts = self::smartQuestions();
 
-        return $texts[$direction][$targetAudience]['comments'][$index];
+        if (empty($texts[$direction][$patient])) {
+            return null;
+        }
+
+        return $texts[$direction][$patient]['comments'][$index];
     }
 }
