@@ -293,7 +293,9 @@ class FakerRu
         return !empty($length) ? mb_str_split($result, $length)[0] : $result;
     }
 
-    
+    /**
+     * Краткое описание эксперта
+     */
     public function expertShortDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
     {
         $result = null;
@@ -309,6 +311,9 @@ class FakerRu
         return $result;
     }
 
+    /**
+     * Краткое полное эксперта
+     */
     public function expertDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
     {
         $result = null;
@@ -324,7 +329,9 @@ class FakerRu
         return $result;
     }
 
-
+    /**
+     * Заголовок рандомного вопроса
+     */
     public function titleQuestion(?int $length = null, string $project = 'relations'): string
     {
         if ($project === 'veterinary') {
@@ -336,6 +343,9 @@ class FakerRu
         }
     }
 
+    /**
+     * Описание рандомного вопроса
+     */
     public function descriptionQuestion(?int $length = null, string $project = 'relations'): string
     {
         if ($project === 'veterinary') {
@@ -347,6 +357,9 @@ class FakerRu
         }
     }
 
+    /**
+     * Ответ рандомный - рандомного вопроса
+     */
     public function answerQuestion(?int $length = null, string $project = 'relations'): string
     {
         if ($project === 'veterinary') {
@@ -358,6 +371,9 @@ class FakerRu
         }
     }
 
+    /**
+     * Коммент рандомный - рандомного вопроса
+     */
     public function commentQuestion(?int $length = null, string $project = 'relations'): string
     {
         if ($project === 'veterinary') {
@@ -433,6 +449,98 @@ class FakerRu
         } else {
             return (new FakeRelations())
                 ->smartCommentQuestion($direction, $targetAudience, $index);
+        }
+    }
+
+    
+    /**
+     * Второй блок специализаций
+     */
+    public function specialistShortDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
+    {
+        $result = null;
+
+        if ($project === 'veterinary') {
+            $result = (new FakeVeterinars())
+                ->specialistShortDescriptionByGender($mainFilter, $subFilter);
+        } else {
+            $result = '';
+        }
+
+        return $result;
+    }
+
+    public function specialistDescription(string $mainFilter, string $subFilter, string $project = 'relations'): ?string
+    {
+        $result = null;
+
+        if ($project === 'veterinary') {
+            $result = (new FakeVeterinars())
+                ->specialistDescriptionByGender($mainFilter, $subFilter);
+        } else {
+            $result = '';
+        }
+
+        return $result;
+    }
+
+    public function smartSpecialistQuestions(string $project = 'relations'): array
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistQuestions();
+        } else {
+            return [];
+        }
+    }
+
+    public function smartSpecialistTitleQuestion(string $direction, string $targetAudience, string $project = 'relations'): ?string
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistTitleQuestion($direction, $targetAudience);
+        } else {
+            return null;
+        }
+    }
+
+    public function smartSpecialistDescriptionQuestion(string $direction, string $targetAudience, string $project = 'relations'): ?string
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistDescriptionQuestion($direction, $targetAudience);
+        } else {
+            return null;
+        }
+    }
+
+    public function smartSpecialistAnswerQuestion(string $direction, string $targetAudience, int $index, string $project = 'relations'): ?string
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistAnswerQuestion($direction, $targetAudience, $index);
+        } else {
+            return null;
+        }
+    }
+
+    public function smartSpecialistAnswerThreadQuestion(string $direction, string $targetAudience, int $index, string $project = 'relations'): ?array
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistAnswerThreadQuestion($direction, $targetAudience, $index);
+        } else {
+            return null;
+        }
+    }
+
+    public function smartSpecialistCommentQuestion(string $direction, string $targetAudience, int $index, string $project = 'relations'): ?string
+    {
+        if ($project === 'veterinary') {
+            return (new FakeVeterinars())
+                ->smartSpecialistCommentQuestion($direction, $targetAudience, $index);
+        } else {
+            return null;
         }
     }
 }
