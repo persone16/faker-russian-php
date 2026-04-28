@@ -9043,7 +9043,7 @@ class FakeVeterinars
 
     public function smartSpecialistTitleQuestion(string $direction, string $patient): ?string
     {
-        $texts = self::smartQuestions();
+        $texts = self::smartSpecialistQuestions();
 
         if (empty($texts[$direction][$patient])) {
             return null;
@@ -9054,7 +9054,7 @@ class FakeVeterinars
 
     public function smartSpecialistDescriptionQuestion(string $direction, string $patient): ?string
     {
-        $texts = self::smartQuestions();
+        $texts = self::smartSpecialistQuestions();
 
         if (empty($texts[$direction][$patient])) {
             return null;
@@ -9065,7 +9065,7 @@ class FakeVeterinars
 
     public function smartSpecialistAnswerQuestion(string $direction, string $patient, int $index): ?string
     {
-        $texts = self::smartQuestions();
+        $texts = self::smartSpecialistQuestions();
 
         if (empty($texts[$direction][$patient])) {
             return null;
@@ -9076,7 +9076,7 @@ class FakeVeterinars
 
     public function smartSpecialistAnswerThreadQuestion(string $direction, string $patient, int $index): ?array
     {
-        $texts = self::smartQuestions();
+        $texts = self::smartSpecialistQuestions();
 
         if (empty($texts[$direction][$patient])) {
             return null;
@@ -9087,7 +9087,7 @@ class FakeVeterinars
 
     public function smartSpecialistCommentQuestion(string $direction, string $patient, int $index): ?string
     {
-        $texts = self::smartQuestions();
+        $texts = self::smartSpecialistQuestions();
 
         if (empty($texts[$direction][$patient])) {
             return null;
